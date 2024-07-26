@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <h1>
       home
-      <Button>button</Button>
+      <Button variant={"outline"}>button</Button>
     </h1>
   );
 }
