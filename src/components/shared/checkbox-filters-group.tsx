@@ -29,6 +29,12 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   className,
 }) => {
   const [showAll, setShowAll] = useState<boolean>(false);
+  // const [value, setValue] = useState<string[]>(defaultValues || []);
+  const [searchValue, setSearchValue] = useState<string>();
+
+  const onChangeSearchValue = (value: string) => {
+    setSearchValue(value);
+  };
 
   const list = showAll ? items : defaultItem?.slice(0, limit);
 
@@ -38,7 +44,8 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
       {showAll && (
         <div className='mb-5'>
           <Input
-            placeholder='searchInputPlaceholder'
+            onChange={(e) => onChangeSearchValue(e.target.value)}
+            placeholder={`${searchInputPlaceholder}`}
             className='bg-gray-50 border-none'
           />
         </div>
@@ -58,9 +65,19 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
           />
         ))}
       </div>
+
       {items.length > limit && (
-        <div>
-          <Button></Button>
+        <div
+          className={
+            showAll ? "border-t border-t-neutral-100 mt-4" : ""
+          }
+        >
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className={"text-primary mt-3"}
+          >
+            {showAll ? "Приховати" : "+ Показати все"}
+          </button>
         </div>
       )}
     </div>
