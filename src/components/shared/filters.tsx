@@ -118,36 +118,36 @@ export const Filters: React.FC<Props> = ({ className }) => {
             value: "8",
           },
           {
-            text: "соус",
-            value: "1",
+            text: "соус4",
+            value: "43",
           },
           {
             text: "соус2",
-            value: "2",
+            value: "46",
           },
           {
             text: "соус2",
-            value: "3",
+            value: "33",
           },
           {
             text: "соус3",
-            value: "4",
+            value: "47",
           },
           {
             text: "соус5",
-            value: "5",
+            value: "54",
           },
           {
             text: "соус6",
-            value: "6",
+            value: "64",
           },
           {
             text: "соус7",
-            value: "7",
+            value: "74",
           },
           {
             text: "соус8",
-            value: "8",
+            value: "84",
           },
         ]}
       />
